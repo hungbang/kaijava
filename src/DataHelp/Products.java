@@ -208,5 +208,26 @@ public class Products {
     public void setDescription(String description) {
         this.description = description;
     }
+    //constructor
+
+    public Products(int productID, String productName, int supplierID, int categoryID, int quantity, double unitPrice, String picture, String color, String size, int orderCount, int viewCount, Date viewDate, String description) {
+        this.productID = productID;
+        this.productName = productName;
+        this.supplierID = supplierID;
+        this.categoryID = categoryID;
+        this.quantity = quantity;
+        this.unitPrice = unitPrice;
+        this.picture = picture;
+        this.color = color;
+        this.size = size;
+        this.orderCount = orderCount;
+        this.viewCount = viewCount;
+        this.viewDate = viewDate;
+        this.description = description;
+    }
+
+    public Products() {
+    }
+    
 
 }
