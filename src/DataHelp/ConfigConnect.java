@@ -5,8 +5,8 @@
  */
 package DataHelp;
 
-import com.oracle.jrockit.jfr.ContentType;
 import java.sql.Connection;
+import java.sql.DriverManager;
 
 /**
  *
@@ -17,11 +17,17 @@ public class ConfigConnect {
     private String user="";
     private String pass="";
     //method get connection voi mysql
-    public Connection getCon(String host, String user, String pass){
+    public Connection getCon(){
         Connection cn = null;
         try{
-            //neu la mysql
-            Class.forName(com)
+            //neu la sql
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            this.host = "jdbc:sqlserver://BNGQUNHNG0A40\\BNGQUNHNG0A40:1433;databaseName=quanlybanhangbyjava";
+            this.user = "sa";
+            this.pass = "1";
+            if(cn == null){
+                cn = DriverManager.getConnection(host, user, pass);
+            }
         }
         catch(Exception ex){
             ex.getMessage();
