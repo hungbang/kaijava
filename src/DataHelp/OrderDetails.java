@@ -86,4 +86,16 @@ public class OrderDetails {
     public void setDiscount(float discount) {
         this.discount = discount;
     }
+
+    public OrderDetails() {
+    }
+
+    public OrderDetails(int orderID, int productID, double unitPrice, int quantity, float discount) {
+	this.orderID = orderID;
+	this.productID = productID;
+	this.unitPrice = unitPrice;
+	this.quantity = quantity;
+	this.discount = discount;
+    }
+    
 }

@@ -13,7 +13,7 @@ public class Customers {
     private int customerID;
     private String customerName;
     private String companyName;
-    private String Address;
+    private String address;
     private String city;
     private String region;
     private String zipcode;
@@ -64,17 +64,17 @@ public class Customers {
     }
 
     /**
-     * @return the Address
+     * @return the address
      */
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     /**
-     * @param Address the Address to set
+     * @param address the Address to set
      */
-    public void setAddress(String Address) {
-        this.Address = Address;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     /**
@@ -160,4 +160,22 @@ public class Customers {
     public void setEmail(String email) {
         this.email = email;
     }
+    //constructor
+
+    public Customers(int customerID, String customerName, String companyName, String address, String city, String region, String zipcode, String country, String phone, String email) {
+	this.customerID = customerID;
+	this.customerName = customerName;
+	this.companyName = companyName;
+	this.address = address;
+	this.city = city;
+	this.region = region;
+	this.zipcode = zipcode;
+	this.country = country;
+	this.phone = phone;
+	this.email = email;
+    }
+
+    public Customers() {
+    }
+    
 }

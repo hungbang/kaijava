@@ -27,7 +27,7 @@ public class EmployeeController {
             CallableStatement call = cn.prepareCall(strSql);
             ResultSet rs = call.executeQuery();
             while(rs.next()){
-                Employees e = new Employees(rs.getInt("employeeID"),rs.getString("lastname"),rs.getString("firstName"),rs.getDate("birthDay"),rs.getDate("hireDay"),rs.getString("address"),rs.getString("city"),rs.getString("region"),rs.getString("zipcode"),rs.getString("country"),rs.getString("phone"),rs.getString("email"),rs.getString("photo"),rs.getString("photoPath"),rs.getInt("reportTo"),rs.getString("typeAccount"),rs.getBoolean("statusAccount"));
+                Employees e = new Employees(rs.getInt("EmployeeID"),rs.getString("Lastname"),rs.getString("FirstName"),rs.getDate("BirthDay"),rs.getDate("HireDay"),rs.getString("Address"),rs.getString("City"),rs.getString("Region"),rs.getString("Zipcode"),rs.getString("Country"),rs.getString("Phone"),rs.getString("Email"),rs.getString("Photo"),rs.getString("PhotoPath"),rs.getInt("ReportTo"),rs.getString("TypeAccount"),rs.getBoolean("StatusAccount"));
                 list.add(e);
             }
         }
@@ -46,7 +46,7 @@ public class EmployeeController {
             call.setInt("EmployeeID", id);
             ResultSet rs = call.executeQuery();
             while(rs.next()){
-                Employees e = new Employees(rs.getInt("employeeID"),rs.getString("lastname"),rs.getString("firstName"),rs.getDate("birthDay"),rs.getDate("hireDay"),rs.getString("address"),rs.getString("city"),rs.getString("region"),rs.getString("zipcode"),rs.getString("country"),rs.getString("phone"),rs.getString("email"),rs.getString("photo"),rs.getString("photoPath"),rs.getInt("reportTo"),rs.getString("typeAccount"),rs.getBoolean("statusAccount"));
+                Employees e = new Employees(rs.getInt("EmployeeID"),rs.getString("Lastname"),rs.getString("FirstName"),rs.getDate("BirthDay"),rs.getDate("HireDay"),rs.getString("Address"),rs.getString("City"),rs.getString("Region"),rs.getString("Zipcode"),rs.getString("Country"),rs.getString("Phone"),rs.getString("Email"),rs.getString("Photo"),rs.getString("PhotoPath"),rs.getInt("ReportTo"),rs.getString("TypeAccount"),rs.getBoolean("StatusAccount"));
                 list.add(e);
             }
         }
@@ -62,22 +62,22 @@ public class EmployeeController {
             String strSql = "call{sp_Employee_Insert(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
             Connection cn = db.getCon();
             CallableStatement call = cn.prepareCall(strSql);
-            call.setString("lastname", e.getLastname());
-            call.setString("firstName", e.getFirstName());
-            call.setDate("birthDay", e.getBirthDay());
-            call.setDate("hireDay", e.getHireDay());
-            call.setString("address", e.getAddress());
-            call.setString("city", e.getCity());
-            call.setString("region", e.getRegion());
-            call.setString("zipcode", e.getZipcode());
-            call.setString("country", e.getCountry());
-            call.setString("phone", e.getPhone());
-            call.setString("email", e.getEmail());
-            call.setString("photo", e.getPhoto());
-            call.setString("photoPath", e.getPhotoPath());
-            call.setInt("reportTo", e.getReportTo());
-            call.setString("typeAccount", e.getTypeAccount());
-            call.setBoolean("statusAccount", e.isStatusAccount());
+            call.setString("Lastname", e.getLastname());
+            call.setString("FirstName", e.getFirstName());
+            call.setDate("BirthDay", e.getBirthDay());
+            call.setDate("HireDay", e.getHireDay());
+            call.setString("Address", e.getAddress());
+            call.setString("City", e.getCity());
+            call.setString("Region", e.getRegion());
+            call.setString("Zipcode", e.getZipcode());
+            call.setString("Country", e.getCountry());
+            call.setString("Phone", e.getPhone());
+            call.setString("Email", e.getEmail());
+            call.setString("Photo", e.getPhoto());
+            call.setString("PhotoPath", e.getPhotoPath());
+            call.setInt("PeportTo", e.getReportTo());
+            call.setString("TypeAccount", e.getTypeAccount());
+            call.setBoolean("StatusAccount", e.isStatusAccount());
             row = call.executeUpdate();
         }
         catch(Exception ex){
@@ -92,22 +92,23 @@ public class EmployeeController {
             String strSql = "call{sp_Employee_Update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
             Connection cn = db.getCon();
             CallableStatement call = cn.prepareCall(strSql);
-            call.setString("lastname", e.getLastname());
-            call.setString("firstName", e.getFirstName());
-            call.setDate("birthDay", e.getBirthDay());
-            call.setDate("hireDay", e.getHireDay());
-            call.setString("address", e.getAddress());
-            call.setString("city", e.getCity());
-            call.setString("region", e.getRegion());
-            call.setString("zipcode", e.getZipcode());
-            call.setString("country", e.getCountry());
-            call.setString("phone", e.getPhone());
-            call.setString("email", e.getEmail());
-            call.setString("photo", e.getPhoto());
-            call.setString("photoPath", e.getPhotoPath());
-            call.setInt("reportTo", e.getReportTo());
-            call.setString("typeAccount", e.getTypeAccount());
-            call.setBoolean("statusAccount", e.isStatusAccount());
+	    call.setInt("EmployeeID", e.getEmployeeID());
+            call.setString("Lastname", e.getLastname());
+            call.setString("FirstName", e.getFirstName());
+            call.setDate("BirthDay", e.getBirthDay());
+            call.setDate("HireDay", e.getHireDay());
+            call.setString("Address", e.getAddress());
+            call.setString("City", e.getCity());
+            call.setString("Region", e.getRegion());
+            call.setString("Zipcode", e.getZipcode());
+            call.setString("Country", e.getCountry());
+            call.setString("Phone", e.getPhone());
+            call.setString("Email", e.getEmail());
+            call.setString("Photo", e.getPhoto());
+            call.setString("PhotoPath", e.getPhotoPath());
+            call.setInt("PeportTo", e.getReportTo());
+            call.setString("TypeAccount", e.getTypeAccount());
+            call.setBoolean("StatusAccount", e.isStatusAccount());
             row = call.executeUpdate();
         }
         catch(Exception ex){

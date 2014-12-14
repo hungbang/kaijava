@@ -208,4 +208,26 @@ public class Orders {
     public void setShipCountry(String shipCountry) {
         this.shipCountry = shipCountry;
     }
+    //order constructor
+
+    public Orders(int orderID, int customerID, int employeeID, Date orderDate, boolean status, Date shippedDate, double freight, String shipName, String shipAddress, String shipCity, String shipRegion, String shipZipCode, String shipCountry) {
+	this.orderID = orderID;
+	this.customerID = customerID;
+	this.employeeID = employeeID;
+	this.orderDate = orderDate;
+	this.status = status;
+	this.shippedDate = shippedDate;
+	this.freight = freight;
+	this.shipName = shipName;
+	this.shipAddress = shipAddress;
+	this.shipCity = shipCity;
+	this.shipRegion = shipRegion;
+	this.shipZipCode = shipZipCode;
+	this.shipCountry = shipCountry;
+    }
+
+    public Orders() {
+    }
+    
+    
 }

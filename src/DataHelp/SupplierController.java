@@ -27,7 +27,7 @@ public class SupplierController {
             CallableStatement call = cn.prepareCall(strSql);
             ResultSet rs = call.executeQuery();
             while(rs.next()){
-                Suppliers s = new Suppliers(rs.getInt("supplierID"),rs.getString("companyName"),rs.getString("contactName"),rs.getString("address"),rs.getString("city"),rs.getString("region"),rs.getString("zipCode"),rs.getString("country"),rs.getString("phone"),rs.getString("fax"),rs.getString("homePage"));
+                Suppliers s = new Suppliers(rs.getInt("SupplierID"),rs.getString("CompanyName"),rs.getString("ContactName"),rs.getString("Address"),rs.getString("City"),rs.getString("Region"),rs.getString("ZipCode"),rs.getString("Country"),rs.getString("Phone"),rs.getString("Fax"),rs.getString("HomePage"));
                 list.add(s);
             }
         } 
@@ -46,7 +46,7 @@ public class SupplierController {
             call.setInt("supplierID", id);
             ResultSet rs = call.executeQuery();
             while(rs.next()){
-                Suppliers s = new Suppliers(rs.getInt("supplierID"),rs.getString("companyName"),rs.getString("contactName"),rs.getString("address"),rs.getString("city"),rs.getString("region"),rs.getString("zipCode"),rs.getString("country"),rs.getString("phone"),rs.getString("fax"),rs.getString("homePage"));
+                Suppliers s = new Suppliers(rs.getInt("SupplierID"),rs.getString("CompanyName"),rs.getString("ContactName"),rs.getString("Address"),rs.getString("City"),rs.getString("Region"),rs.getString("ZipCode"),rs.getString("Country"),rs.getString("Phone"),rs.getString("Fax"),rs.getString("HomePage"));
                 list.add(s);
             }
         }
@@ -86,6 +86,7 @@ public class SupplierController {
             String strSql = "call{sp_Supplier_Update(?,?,?,?,?,?,?,?,?,?)}";
             Connection cn = db.getCon();
             CallableStatement call = cn.prepareCall(strSql);
+	    call.setInt("SupplierID", s.getSupplierID());
             call.setString("CompanyName",s.getCompanyName());
             call.setString("ContactName",s.getContactName());
             call.setString("Address",s.getAddress());

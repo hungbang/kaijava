@@ -87,6 +87,7 @@ public class ProductController {
 	   String strSql = "call{sp_Product_Update(?,?,?,?,?,?,?,?,?,?,?,?)}";
 	   Connection cn = db.getCon();
 	   CallableStatement call = cn.prepareCall(strSql);
+	   call.setInt("ProductID", p.getProductID());
 	   call.setString("ProductName", p.getProductName());
 	   call.setInt("SupplierID", p.getSupplierID());
 	   call.setInt("CategoryID", p.getCategoryID());

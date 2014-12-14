@@ -40,4 +40,13 @@ public class Categories {
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }
+
+    public Categories(int categoryID, String categoryName) {
+	this.categoryID = categoryID;
+	this.categoryName = categoryName;
+    }
+
+    public Categories() {
+    }
+    
 }
