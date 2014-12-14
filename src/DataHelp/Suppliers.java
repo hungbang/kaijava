@@ -176,4 +176,24 @@ public class Suppliers {
     public void setHomePage(String homePage) {
         this.homePage = homePage;
     }
+    
+    //constructor
+    public Suppliers(int supplierID, String companyName, String contactName, String address, String city, String region, String zipCode, String country, String phone, String fax, String homePage) {
+        this.supplierID = supplierID;
+        this.companyName = companyName;
+        this.contactName = contactName;
+        this.address = address;
+        this.city = city;
+        this.region = region;
+        this.zipCode = zipCode;
+        this.country = country;
+        this.phone = phone;
+        this.fax = fax;
+        this.homePage = homePage;
+    }
+
+    public Suppliers() {
+    }
+    
+    
 }

@@ -266,4 +266,29 @@ public class Employees {
     public void setStatusAccount(boolean statusAccount) {
         this.statusAccount = statusAccount;
     }
+
+    //constructor
+    public Employees(int employeeID, String lastname, String firstName, Date birthDay, Date hireDay, String address, String city, String region, String zipcode, String country, String phone, String email, String photo, String photoPath, int reportTo, String typeAccount, boolean statusAccount) {
+        this.employeeID = employeeID;
+        this.lastname = lastname;
+        this.firstName = firstName;
+        this.birthDay = birthDay;
+        this.hireDay = hireDay;
+        this.address = address;
+        this.city = city;
+        this.region = region;
+        this.zipcode = zipcode;
+        this.country = country;
+        this.phone = phone;
+        this.email = email;
+        this.photo = photo;
+        this.photoPath = photoPath;
+        this.reportTo = reportTo;
+        this.typeAccount = typeAccount;
+        this.statusAccount = statusAccount;
+    }
+
+    public Employees() {
+    }
+    
 }
