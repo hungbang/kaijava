@@ -21,7 +21,7 @@ public class ProductController {
    public List<Products> getProduct(){
        List<Products> list = new ArrayList<>();
        try{
-           String strSql = "call{sp_Product_GetAll}";
+           String strSql = "{call sp_Product_GetAll}";
 	   Connection cn = db.getCon();
 	   CallableStatement call = cn.prepareCall(strSql);
            ResultSet rs = call.executeQuery();
@@ -39,7 +39,7 @@ public class ProductController {
    public List<Products> getProductByID(int id){
        List<Products> list = new ArrayList<>();
        try{
-	   String strSql = "call{sp_Product_GetByID(?)}";
+	   String strSql = "{call sp_Product_GetByID(?)}";
 	   Connection cn = db.getCon();
 	   CallableStatement call = cn.prepareCall(strSql);
 	   call.setInt("ProductID", id);
@@ -58,7 +58,7 @@ public class ProductController {
    public int insertProduct(Products p){
        int row = 0;
        try{
-	   String strSql = "call{sp_Product_Insert(?,?,?,?,?,?,?,?,?,?,?,?)}";
+	   String strSql = "{call sp_Product_Insert(?,?,?,?,?,?,?,?,?,?,?,?)}";
 	   Connection cn = db.getCon();
 	   CallableStatement call = cn.prepareCall(strSql);
 	   call.setString("ProductName", p.getProductName());
@@ -84,7 +84,7 @@ public class ProductController {
    public int updateProduct(Products p){
        int row = 0;
        try{
-	   String strSql = "call{sp_Product_Update(?,?,?,?,?,?,?,?,?,?,?,?)}";
+	   String strSql = "{call sp_Product_Update(?,?,?,?,?,?,?,?,?,?,?,?)}";
 	   Connection cn = db.getCon();
 	   CallableStatement call = cn.prepareCall(strSql);
 	   call.setInt("ProductID", p.getProductID());
@@ -111,7 +111,7 @@ public class ProductController {
    public int deleteProduct(int id){
        int row = 0;
        try{
-	   String strSql = "call{sp_Product_Delete(?)}";
+	   String strSql = "{call sp_Product_Delete(?)}";
 	   Connection cn = db.getCon();
 	   CallableStatement call = cn.prepareCall(strSql);
 	   call.setInt("ProductID", id);

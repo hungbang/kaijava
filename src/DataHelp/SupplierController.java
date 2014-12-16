@@ -22,7 +22,7 @@ public class SupplierController {
     public List<Suppliers> getSupplier(){
         List<Suppliers> list = new ArrayList<>();
         try{
-            String strSql = "call{sp_Supplier_GetAll}";
+            String strSql = "{call sp_Supplier_GetAll}";
             Connection cn = db.getCon();
             CallableStatement call = cn.prepareCall(strSql);
             ResultSet rs = call.executeQuery();
@@ -40,7 +40,7 @@ public class SupplierController {
     public List<Suppliers> getSupplierByID(int id){
         List<Suppliers> list = new ArrayList<>();
         try{
-            String strSql = "call{sp_Supplier_GetID(?)}";
+            String strSql = "{call sp_Supplier_GetID(?)}";
             Connection cn = db.getCon();
             CallableStatement call = cn.prepareCall(strSql);
             call.setInt("supplierID", id);
@@ -59,7 +59,7 @@ public class SupplierController {
     public int insertSupllier(Suppliers s){
         int row = 0;
         try{
-            String strSql = "call{sp_Supplier_Insert(?,?,?,?,?,?,?,?,?,?)}";
+            String strSql = "{call sp_Supplier_Insert(?,?,?,?,?,?,?,?,?,?)}";
             Connection cn = db.getCon();
             CallableStatement call = cn.prepareCall(strSql);
             call.setString("CompanyName",s.getCompanyName());
@@ -83,7 +83,7 @@ public class SupplierController {
     public int updateSupllier(Suppliers s){
         int row = 0;
         try{
-            String strSql = "call{sp_Supplier_Update(?,?,?,?,?,?,?,?,?,?)}";
+            String strSql = "{call sp_Supplier_Update(?,?,?,?,?,?,?,?,?,?)}";
             Connection cn = db.getCon();
             CallableStatement call = cn.prepareCall(strSql);
 	    call.setInt("SupplierID", s.getSupplierID());
@@ -108,7 +108,7 @@ public class SupplierController {
     public int deleteSupplier(int id){
         int row = 0;
         try{
-            String strSql = "call{sp_Supplier_Delete(?)}";
+            String strSql = "{call sp_Supplier_Delete(?)}";
             Connection cn = db.getCon();
             CallableStatement call = cn.prepareCall(strSql);
             call.setInt("SupplierID", id);

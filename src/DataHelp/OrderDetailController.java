@@ -21,7 +21,7 @@ public class OrderDetailController {
     public List<OrderDetails> getOrderDetailAll(){
 	List<OrderDetails> list = new ArrayList<>();
 	try{
-	    String strSql = "call{sp_OrderDetail_GetByAll}";
+	    String strSql = "{call sp_OrderDetail_GetByAll}";
 	    Connection cn = db.getCon();
 	    CallableStatement call = cn.prepareCall(strSql);
 	    ResultSet rs = call.executeQuery();
@@ -40,7 +40,7 @@ public class OrderDetailController {
     public List<OrderDetails> getOrderDetailByID(int id){
 	List<OrderDetails> list = new ArrayList<>();
 	try{
-	    String strSql = "call{sp_OrderDetail_GetByID(?)}";
+	    String strSql = "{call sp_OrderDetail_GetByID(?)}";
 	    Connection cn = db.getCon();
 	    CallableStatement call = cn.prepareCall(strSql);
 	    call.setInt("OrderID", id);
@@ -59,7 +59,7 @@ public class OrderDetailController {
     public int insertOrderDetail(OrderDetails od){
 	int row = 0;
 	try{
-	    String strSql = "call{sp_OrderDetail_Insert(?,?,?,?,?)}";
+	    String strSql = "{call sp_OrderDetail_Insert(?,?,?,?,?)}";
 	    Connection cn = db.getCon();
 	    CallableStatement call = cn.prepareCall(strSql);
 	    call.setInt("OrderID", od.getOrderID());
@@ -78,7 +78,7 @@ public class OrderDetailController {
     public int updateOrderDetail(OrderDetails od){
 	int row = 0;
 	try{
-	    String strSql = "call{sp_OrderDetail_Update(?,?,?,?,?)}";
+	    String strSql = "{call sp_OrderDetail_Update(?,?,?,?,?)}";
 	    Connection cn = db.getCon();
 	    CallableStatement call = cn.prepareCall(strSql);
 	    call.setInt("OrderID", od.getOrderID());
@@ -97,7 +97,7 @@ public class OrderDetailController {
     public int deleteOrderDetail(OrderDetails od){
 	int row = 0;
 	try{
-	    String strSql = "call{sp_OrderDetail_Delete(?,?)}";
+	    String strSql = "{call sp_OrderDetail_Delete(?,?)}";
 	    Connection cn = db.getCon();
 	    CallableStatement call = cn.prepareCall(strSql);
 	    call.setInt("OrderID", od.getOrderID());
