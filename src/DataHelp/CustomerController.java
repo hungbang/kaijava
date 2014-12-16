@@ -8,6 +8,7 @@ package DataHelp;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,13 +19,16 @@ import java.util.List;
 public class CustomerController {
     DataHelp db = new DataHelp();
     //get all order 
-    public List<Customers> getCusByAll(){
+    public List<Customers> getCusByAll() throws SQLException{
 	List<Customers> list = new ArrayList<>();
+        CallableStatement call = null;
+        ResultSet rs = null;
+        Connection cn = null;
 	try{
-	    String strSql = "call{sp_Customer_GetAll}";
-	    Connection cn = db.getCon();
-	    CallableStatement call = cn.prepareCall(strSql);
-	    ResultSet rs = call.executeQuery();
+	    String strSql = "{call sp_Customer_GetAll}";
+	    cn = db.getCon();
+	    call = cn.prepareCall(strSql);
+	    rs = call.executeQuery();
 	    while(rs.next())
 	    {
 		Customers p = new Customers(rs.getInt("CustomerID"), rs.getString("CustomerName"), rs.getString("CompanyName"), rs.getString("Address"), rs.getString("City"), rs.getString("Region"), rs.getString("Zipcode"), rs.getString("Country"), rs.getString("Phone"), rs.getString("Email"));
@@ -34,13 +38,16 @@ public class CustomerController {
 	catch(Exception ex){
 	    System.err.println(ex.getMessage());
 	}
+        finally{
+            call.close();
+        }
 	return list;
     }
     //get order by id
     public List<Customers> getOrderByID(int id){
 	List<Customers> list = new ArrayList<>();
 	try{
-	    String strSql = "call{sp_Customer_GetByID}";
+	    String strSql = "{call sp_Customer_GetByID(?)}";
 	    Connection cn = db.getCon();
 	    CallableStatement call = cn.prepareCall(strSql);
 	    call.setInt("CustomerID", id);
@@ -60,7 +67,7 @@ public class CustomerController {
     public int insertCustomer(Customers p){
 	int row = 0;
 	try{
-	    String strSql = "call{sp_Customer_Insert(?,?,?,?,?,?,?,?,?)}";
+	    String strSql = "{call sp_Customer_Insert(?,?,?,?,?,?,?,?,?)}";
 	    Connection cn = db.getCon();
 	    CallableStatement call = cn.prepareCall(strSql);
 	    //call.setInt("CustomerID", p.getCustomerID());
@@ -84,7 +91,7 @@ public class CustomerController {
     public int updateOrder(Customers p){
 	int row = 0;
 	try{
-	    String strSql = "call{sp_Customer_Update(?,?,?,?,?,?,?,?,?,?)}";
+	    String strSql = "{call sp_Customer_Update(?,?,?,?,?,?,?,?,?,?)}";
 	    Connection cn = db.getCon();
 	    CallableStatement call = cn.prepareCall(strSql);
 	    call.setInt("CustomerID", p.getCustomerID());
@@ -108,7 +115,7 @@ public class CustomerController {
     public int deleteOrder(Customers p){
 	int row = 0;
 	try{
-	    String strSql = "call{sp_Order_Delete(?)}";
+	    String strSql = "{call sp_Order_Delete(?)}";
 	    Connection cn = db.getCon();
 	    CallableStatement call = cn.prepareCall(strSql);
 	    call.setInt("CustomerID", p.getCustomerID());

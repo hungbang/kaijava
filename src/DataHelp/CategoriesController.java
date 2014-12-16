@@ -21,7 +21,7 @@ public class CategoriesController {
     public List<Categories> getCateAll(){
 	List<Categories> list = new ArrayList<>();
 	try{
-	    String strSql = "call{sp_Cate_GetAll}";
+	    String strSql = "{call sp_Cate_GetAll}";
 	    Connection cn = db.getCon();
 	    CallableStatement call = cn.prepareCall(strSql);
 	    ResultSet rs = call.executeQuery();
@@ -39,7 +39,7 @@ public class CategoriesController {
     public List<Categories> getCateByID(int id){
 	List<Categories> list = new ArrayList<>();
 	try{
-	    String strSql = "call{sp_Cate_GetByID(?)}";
+	    String strSql = "{call sp_Cate_GetByID(?)}";
 	    Connection cn = db.getCon();
 	    CallableStatement call = cn.prepareCall(strSql);
 	    call.setInt("CategoryID", id);
@@ -58,7 +58,7 @@ public class CategoriesController {
     public int insertCate(Categories c){
 	int row = 0;
 	try{
-	    String strSql = "call{sp_Cate_Insert(?)}";
+	    String strSql = "{call sp_Cate_Insert(?)}";
 	    Connection cn = db.getCon();
 	    CallableStatement call = cn.prepareCall(strSql);
 	    call.setString("CategoryName", c.getCategoryName());
@@ -73,9 +73,10 @@ public class CategoriesController {
     public int updateCate(Categories c){
 	int row = 0;
 	try{
-	    String strSql = "call{sp_Cate_Update(?)}";
+	    String strSql = "call{sp_Cate_Update(?,?)}";
 	    Connection cn = db.getCon();
 	    CallableStatement call = cn.prepareCall(strSql);
+            call.setInt("CategoryID", c.getCategoryID());
 	    call.setString("CategoryName", c.getCategoryName());
 	    row = call.executeUpdate();
 	}
@@ -88,7 +89,7 @@ public class CategoriesController {
     public int deleteCate(Categories c){
 	int row = 0;
 	try{
-	    String strSql = "call{sp_Cate_Delete(?)}";
+	    String strSql = "{call sp_Cate_Delete(?)}";
 	    Connection cn = db.getCon();
 	    CallableStatement call = cn.prepareCall(strSql);
 	    call.setInt("CategoryID", c.getCategoryID());

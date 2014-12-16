@@ -7,6 +7,7 @@ package Business;
 
 import DataHelp.CustomerController;
 import DataHelp.Customers;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ import java.util.List;
  */
 public class CustomerServices {
     CustomerController cc = new CustomerController();
-    public List<Customers> getCusByAll(){
+    public List<Customers> getCusByAll() throws SQLException{
 	return cc.getCusByAll();
     }
     public List<Customers> getOrderByID(int id){

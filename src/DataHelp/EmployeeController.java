@@ -22,7 +22,7 @@ public class EmployeeController {
     public List<Employees> getEmployee(){
         List<Employees> list = new ArrayList<>();
         try{
-            String strSql = "call{sp_Employee_GetAll}";
+            String strSql = "{call sp_Employee_GetAll}";
             Connection cn = db.getCon();
             CallableStatement call = cn.prepareCall(strSql);
             ResultSet rs = call.executeQuery();
@@ -40,7 +40,7 @@ public class EmployeeController {
     public List<Employees> getSupplierByID(int id){
         List<Employees> list = new ArrayList<>();
         try{
-            String strSql = "call{sp_Employee_GetID(?)}";
+            String strSql = "{call sp_Employee_GetID(?)}";
             Connection cn = db.getCon();
             CallableStatement call = cn.prepareCall(strSql);
             call.setInt("EmployeeID", id);
@@ -59,7 +59,7 @@ public class EmployeeController {
     public int insertEmployee(Employees e){
         int row = 0;
         try{
-            String strSql = "call{sp_Employee_Insert(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+            String strSql = "{call sp_Employee_Insert(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
             Connection cn = db.getCon();
             CallableStatement call = cn.prepareCall(strSql);
             call.setString("Lastname", e.getLastname());
@@ -89,7 +89,7 @@ public class EmployeeController {
     public int updateEmployee(Employees e){
         int row = 0;
         try{
-            String strSql = "call{sp_Employee_Update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+            String strSql = "{call sp_Employee_Update(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
             Connection cn = db.getCon();
             CallableStatement call = cn.prepareCall(strSql);
 	    call.setInt("EmployeeID", e.getEmployeeID());
@@ -120,7 +120,7 @@ public class EmployeeController {
     public int deleteEmployee(int id){
         int row = 0;
         try{
-            String strSql = "call{sp_Employee_Delete(?)}";
+            String strSql = "{call sp_Employee_Delete(?)}";
             Connection cn = db.getCon();
             CallableStatement call = cn.prepareCall(strSql);
             call.setInt("EmployeeID", id);
