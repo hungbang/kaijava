@@ -7,6 +7,7 @@ package Business;
 
 import DataHelp.OrderController;
 import DataHelp.Orders;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -15,19 +16,19 @@ import java.util.List;
  */
 public class OrderServices {
     OrderController oc = new OrderController();
-    public List<Orders> getOrderByAll(){
+    public List<Orders> getOrderByAll() throws SQLException{
 	return oc.getOrderByAll();
     }
-    public List<Orders> getOrderByID(int id){
+    public List<Orders> getOrderByID(int id) throws SQLException{
 	return oc.getOrderByID(id);
     }
-    public int insertOrder(Orders o){
+    public int insertOrder(Orders o) throws SQLException{
 	return oc.insertOrder(o);
     }
-    public int updateOrder(Orders o){
+    public int updateOrder(Orders o) throws SQLException{
 	return oc.updateOrder(o);
     }
-    public int deleteOrder(Orders o){
+    public int deleteOrder(Orders o) throws SQLException{
 	return oc.deleteOrder(o);
     }
 }

@@ -5,6 +5,8 @@
  */
 package Presentation;
 
+import Test.loadcombobox;
+import Test.uploadImage;
 import javax.swing.JTabbedPane;
 
 /**
@@ -31,120 +33,338 @@ public class jfrMain extends javax.swing.JFrame {
     private void initComponents() {
 
         jToolBar1 = new javax.swing.JToolBar();
-        jButton1 = new javax.swing.JButton();
-        btnConfig = new javax.swing.JButton();
-        btnSale = new javax.swing.JButton();
-        btnReport = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        pProfile = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblAccDetail = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        tpMainBoard = new javax.swing.JTabbedPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jmiSystemPre = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jmiProInsert = new javax.swing.JMenuItem();
+        jSeparator5 = new javax.swing.JPopupMenu.Separator();
+        jmiProUpdate = new javax.swing.JMenuItem();
+        jSeparator4 = new javax.swing.JPopupMenu.Separator();
+        jmiProDelete = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
+        jmiProShow = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jmiProSearch = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jmiCusInsert = new javax.swing.JMenuItem();
+        jSeparator6 = new javax.swing.JPopupMenu.Separator();
+        jmiCusUpdate = new javax.swing.JMenuItem();
+        jSeparator7 = new javax.swing.JPopupMenu.Separator();
+        jmiCusDelete = new javax.swing.JMenuItem();
+        jSeparator8 = new javax.swing.JPopupMenu.Separator();
+        jmiCusShow = new javax.swing.JMenuItem();
+        jSeparator9 = new javax.swing.JPopupMenu.Separator();
+        jmiCusSearch = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jmiCateInsert = new javax.swing.JMenuItem();
+        jSeparator10 = new javax.swing.JPopupMenu.Separator();
+        jmiCateUpdate = new javax.swing.JMenuItem();
+        jSeparator11 = new javax.swing.JPopupMenu.Separator();
+        jmiCateDelete = new javax.swing.JMenuItem();
+        jSeparator12 = new javax.swing.JPopupMenu.Separator();
+        jmiCateShow = new javax.swing.JMenuItem();
+        jSeparator13 = new javax.swing.JPopupMenu.Separator();
+        jmiCateSearch = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jmiSupInsert = new javax.swing.JMenuItem();
+        jSeparator14 = new javax.swing.JPopupMenu.Separator();
+        jmiSupUpdate = new javax.swing.JMenuItem();
+        jSeparator15 = new javax.swing.JPopupMenu.Separator();
+        jmiSupDelete = new javax.swing.JMenuItem();
+        jSeparator16 = new javax.swing.JPopupMenu.Separator();
+        jmiSupShow = new javax.swing.JMenuItem();
+        jSeparator17 = new javax.swing.JPopupMenu.Separator();
+        jmiSupSearch = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jmiOrderInsert = new javax.swing.JMenuItem();
+        jSeparator18 = new javax.swing.JPopupMenu.Separator();
+        jmiOrderUpdate = new javax.swing.JMenuItem();
+        jSeparator19 = new javax.swing.JPopupMenu.Separator();
+        jmiOrderDelete = new javax.swing.JMenuItem();
+        jSeparator20 = new javax.swing.JPopupMenu.Separator();
+        jmiOrderShow = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        jmiOrderSearch = new javax.swing.JMenuItem();
+        jmiReport = new javax.swing.JMenu();
+        jmiOrderInsert1 = new javax.swing.JMenuItem();
+        jSeparator21 = new javax.swing.JPopupMenu.Separator();
+        jmiOrderUpdate1 = new javax.swing.JMenuItem();
+        jSeparator22 = new javax.swing.JPopupMenu.Separator();
+        jmiOrderDelete1 = new javax.swing.JMenuItem();
+        jSeparator23 = new javax.swing.JPopupMenu.Separator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sales Clothing");
         setBackground(new java.awt.Color(173, 216, 230));
+        setPreferredSize(new java.awt.Dimension(1366, 768));
 
         jToolBar1.setRollover(true);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/iconmonstr-open-folder-icon-16.png"))); // NOI18N
-        jButton1.setText("System");
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setPreferredSize(new java.awt.Dimension(70, 41));
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(jButton1);
+        pProfile.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "Profile", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 11)))); // NOI18N
 
-        btnConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/folder-developer-icon.png"))); // NOI18N
-        btnConfig.setText("Setting");
-        btnConfig.setFocusable(false);
-        btnConfig.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnConfig.setPreferredSize(new java.awt.Dimension(70, 41));
-        btnConfig.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(btnConfig);
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel1.setText("<html><span>Welcome:</span></html>");
 
-        btnSale.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/sale-icon-16.png"))); // NOI18N
-        btnSale.setText("Sale");
-        btnSale.setFocusable(false);
-        btnSale.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnSale.setPreferredSize(new java.awt.Dimension(70, 41));
-        btnSale.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(btnSale);
+        lblName.setText("Admin");
 
-        btnReport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Generate-tables-icon.png"))); // NOI18N
-        btnReport.setText("Report");
-        btnReport.setFocusable(false);
-        btnReport.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnReport.setPreferredSize(new java.awt.Dimension(70, 41));
-        btnReport.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(btnReport);
+        lblAccDetail.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        lblAccDetail.setText("<html><a href=\"#\" style=\"color: #2c3e50;\">Account Detail</a>\n</html>");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "Function", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 11)))); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        jLabel2.setText("<html><u style=\"color: #c0392b;\">Sign Out</u></html>");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Sign-StandBy-icon16.png"))); // NOI18N
-        jLabel1.setText("Sign Out");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/24_shirt_polo.png"))); // NOI18N
-        jLabel2.setText("Manage Product");
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/report-user-icon-24.png"))); // NOI18N
-        jLabel3.setText("Manage Customer");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pProfileLayout = new javax.swing.GroupLayout(pProfile);
+        pProfile.setLayout(pProfileLayout);
+        pProfileLayout.setHorizontalGroup(
+            pProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pProfileLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addGroup(pProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pProfileLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblName))
+                    .addComponent(lblAccDetail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        pProfileLayout.setVerticalGroup(
+            pProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pProfileLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(pProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(lblAccDetail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jMenu1.setText("File");
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Home.png"))); // NOI18N
+        jMenu1.setText("System");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Manage");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jmiSystemPre.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        jmiSystemPre.setText("Preferences");
+        jmiSystemPre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jmiSystemPreActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu1.add(jmiSystemPre);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/clothing.png"))); // NOI18N
+        jMenu2.setText("Product");
+
+        jmiProInsert.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        jmiProInsert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Add.png"))); // NOI18N
+        jmiProInsert.setText("Add New");
+        jmiProInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiProInsertActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jmiProInsert);
+        jMenu2.add(jSeparator5);
+
+        jmiProUpdate.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        jmiProUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Modify_1.png"))); // NOI18N
+        jmiProUpdate.setText("Edit ");
+        jMenu2.add(jmiProUpdate);
+        jMenu2.add(jSeparator4);
+
+        jmiProDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        jmiProDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Delete.png"))); // NOI18N
+        jmiProDelete.setText("Remove");
+        jmiProDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiProDeleteActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jmiProDelete);
+        jMenu2.add(jSeparator3);
+
+        jmiProShow.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
+        jmiProShow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Info.png"))); // NOI18N
+        jmiProShow.setText("View");
+        jMenu2.add(jmiProShow);
+        jMenu2.add(jSeparator1);
+
+        jmiProSearch.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jmiProSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Search.png"))); // NOI18N
+        jmiProSearch.setText("Search");
+        jMenu2.add(jmiProSearch);
+
         jMenuBar1.add(jMenu2);
+
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/People.png"))); // NOI18N
+        jMenu3.setText("Customer");
+
+        jmiCusInsert.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        jmiCusInsert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Add.png"))); // NOI18N
+        jmiCusInsert.setText("Add New");
+        jMenu3.add(jmiCusInsert);
+        jMenu3.add(jSeparator6);
+
+        jmiCusUpdate.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        jmiCusUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Modify_1.png"))); // NOI18N
+        jmiCusUpdate.setText("Edit ");
+        jMenu3.add(jmiCusUpdate);
+        jMenu3.add(jSeparator7);
+
+        jmiCusDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        jmiCusDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Delete.png"))); // NOI18N
+        jmiCusDelete.setText("Remove");
+        jMenu3.add(jmiCusDelete);
+        jMenu3.add(jSeparator8);
+
+        jmiCusShow.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
+        jmiCusShow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Info.png"))); // NOI18N
+        jmiCusShow.setText("View");
+        jMenu3.add(jmiCusShow);
+        jMenu3.add(jSeparator9);
+
+        jmiCusSearch.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jmiCusSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Search.png"))); // NOI18N
+        jmiCusSearch.setText("Search");
+        jMenu3.add(jmiCusSearch);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/categories-24.png"))); // NOI18N
+        jMenu4.setText("Categories");
+
+        jmiCateInsert.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        jmiCateInsert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Add.png"))); // NOI18N
+        jmiCateInsert.setText("Add New");
+        jMenu4.add(jmiCateInsert);
+        jMenu4.add(jSeparator10);
+
+        jmiCateUpdate.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        jmiCateUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Modify_1.png"))); // NOI18N
+        jmiCateUpdate.setText("Edit ");
+        jMenu4.add(jmiCateUpdate);
+        jMenu4.add(jSeparator11);
+
+        jmiCateDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        jmiCateDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Delete.png"))); // NOI18N
+        jmiCateDelete.setText("Remove");
+        jMenu4.add(jmiCateDelete);
+        jMenu4.add(jSeparator12);
+
+        jmiCateShow.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
+        jmiCateShow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Info.png"))); // NOI18N
+        jmiCateShow.setText("View");
+        jMenu4.add(jmiCateShow);
+        jMenu4.add(jSeparator13);
+
+        jmiCateSearch.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jmiCateSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Search.png"))); // NOI18N
+        jmiCateSearch.setText("Search");
+        jMenu4.add(jmiCateSearch);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/provider_user_worker_supplier-24.png"))); // NOI18N
+        jMenu5.setText("Supplier");
+
+        jmiSupInsert.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        jmiSupInsert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Add.png"))); // NOI18N
+        jmiSupInsert.setText("Add New");
+        jMenu5.add(jmiSupInsert);
+        jMenu5.add(jSeparator14);
+
+        jmiSupUpdate.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        jmiSupUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Modify_1.png"))); // NOI18N
+        jmiSupUpdate.setText("Edit ");
+        jMenu5.add(jmiSupUpdate);
+        jMenu5.add(jSeparator15);
+
+        jmiSupDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        jmiSupDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Delete.png"))); // NOI18N
+        jmiSupDelete.setText("Remove");
+        jMenu5.add(jmiSupDelete);
+        jMenu5.add(jSeparator16);
+
+        jmiSupShow.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
+        jmiSupShow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Info.png"))); // NOI18N
+        jmiSupShow.setText("View");
+        jMenu5.add(jmiSupShow);
+        jMenu5.add(jSeparator17);
+
+        jmiSupSearch.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jmiSupSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Search.png"))); // NOI18N
+        jmiSupSearch.setText("Search");
+        jMenu5.add(jmiSupSearch);
+
+        jMenuBar1.add(jMenu5);
+
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/order.png"))); // NOI18N
+        jMenu6.setText("Order Management");
+
+        jmiOrderInsert.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        jmiOrderInsert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Add.png"))); // NOI18N
+        jmiOrderInsert.setText("Add New");
+        jMenu6.add(jmiOrderInsert);
+        jMenu6.add(jSeparator18);
+
+        jmiOrderUpdate.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        jmiOrderUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Modify_1.png"))); // NOI18N
+        jmiOrderUpdate.setText("Edit ");
+        jMenu6.add(jmiOrderUpdate);
+        jMenu6.add(jSeparator19);
+
+        jmiOrderDelete.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        jmiOrderDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Delete.png"))); // NOI18N
+        jmiOrderDelete.setText("Remove");
+        jMenu6.add(jmiOrderDelete);
+        jMenu6.add(jSeparator20);
+
+        jmiOrderShow.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
+        jmiOrderShow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Info.png"))); // NOI18N
+        jmiOrderShow.setText("View");
+        jMenu6.add(jmiOrderShow);
+        jMenu6.add(jSeparator2);
+
+        jmiOrderSearch.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jmiOrderSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Search.png"))); // NOI18N
+        jmiOrderSearch.setText("Search");
+        jMenu6.add(jmiOrderSearch);
+
+        jMenuBar1.add(jMenu6);
+
+        jmiReport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/Report.png"))); // NOI18N
+        jmiReport.setText("Report & Statistic");
+
+        jmiOrderInsert1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
+        jmiOrderInsert1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/month.png"))); // NOI18N
+        jmiOrderInsert1.setText("Monthly");
+        jmiReport.add(jmiOrderInsert1);
+        jmiReport.add(jSeparator21);
+
+        jmiOrderUpdate1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        jmiOrderUpdate1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/quarter.png"))); // NOI18N
+        jmiOrderUpdate1.setText("Quarterly");
+        jmiReport.add(jmiOrderUpdate1);
+        jmiReport.add(jSeparator22);
+
+        jmiOrderDelete1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        jmiOrderDelete1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/PNG-24/annual.png"))); // NOI18N
+        jmiOrderDelete1.setText("Annual");
+        jmiReport.add(jmiOrderDelete1);
+        jmiReport.add(jSeparator23);
+
+        jMenuBar1.add(jmiReport);
 
         setJMenuBar(jMenuBar1);
 
@@ -157,34 +377,43 @@ public class jfrMain extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 657, Short.MAX_VALUE)))
+                        .addComponent(pProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tpMainBoard)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(399, 399, 399))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tpMainBoard, javax.swing.GroupLayout.PREFERRED_SIZE, 624, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pProfile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jmiSystemPreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiSystemPreActionPerformed
+        uploadImage u = new uploadImage();
+        
+        tpMainBoard.removeAll();
+        tpMainBoard.add("Show combobox", u);
+        tpMainBoard.setSelectedComponent(u);
+    }//GEN-LAST:event_jmiSystemPreActionPerformed
+
+    private void jmiProDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiProDeleteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_jmiProDeleteActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        System.out.println("click");
-    }//GEN-LAST:event_jLabel1MouseClicked
+    private void jmiProInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiProInsertActionPerformed
+        pnlAddProduct add = new pnlAddProduct();
+        tpMainBoard.removeAll();
+        tpMainBoard.add("Add New Product", add);
+        tpMainBoard.setSelectedComponent(add);
+    }//GEN-LAST:event_jmiProInsertActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,18 +451,72 @@ public class jfrMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnConfig;
-    private javax.swing.JButton btnReport;
-    private javax.swing.JButton btnSale;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator10;
+    private javax.swing.JPopupMenu.Separator jSeparator11;
+    private javax.swing.JPopupMenu.Separator jSeparator12;
+    private javax.swing.JPopupMenu.Separator jSeparator13;
+    private javax.swing.JPopupMenu.Separator jSeparator14;
+    private javax.swing.JPopupMenu.Separator jSeparator15;
+    private javax.swing.JPopupMenu.Separator jSeparator16;
+    private javax.swing.JPopupMenu.Separator jSeparator17;
+    private javax.swing.JPopupMenu.Separator jSeparator18;
+    private javax.swing.JPopupMenu.Separator jSeparator19;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JPopupMenu.Separator jSeparator20;
+    private javax.swing.JPopupMenu.Separator jSeparator21;
+    private javax.swing.JPopupMenu.Separator jSeparator22;
+    private javax.swing.JPopupMenu.Separator jSeparator23;
+    private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JPopupMenu.Separator jSeparator4;
+    private javax.swing.JPopupMenu.Separator jSeparator5;
+    private javax.swing.JPopupMenu.Separator jSeparator6;
+    private javax.swing.JPopupMenu.Separator jSeparator7;
+    private javax.swing.JPopupMenu.Separator jSeparator8;
+    private javax.swing.JPopupMenu.Separator jSeparator9;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JMenuItem jmiCateDelete;
+    private javax.swing.JMenuItem jmiCateInsert;
+    private javax.swing.JMenuItem jmiCateSearch;
+    private javax.swing.JMenuItem jmiCateShow;
+    private javax.swing.JMenuItem jmiCateUpdate;
+    private javax.swing.JMenuItem jmiCusDelete;
+    private javax.swing.JMenuItem jmiCusInsert;
+    private javax.swing.JMenuItem jmiCusSearch;
+    private javax.swing.JMenuItem jmiCusShow;
+    private javax.swing.JMenuItem jmiCusUpdate;
+    private javax.swing.JMenuItem jmiOrderDelete;
+    private javax.swing.JMenuItem jmiOrderDelete1;
+    private javax.swing.JMenuItem jmiOrderInsert;
+    private javax.swing.JMenuItem jmiOrderInsert1;
+    private javax.swing.JMenuItem jmiOrderSearch;
+    private javax.swing.JMenuItem jmiOrderShow;
+    private javax.swing.JMenuItem jmiOrderUpdate;
+    private javax.swing.JMenuItem jmiOrderUpdate1;
+    private javax.swing.JMenuItem jmiProDelete;
+    private javax.swing.JMenuItem jmiProInsert;
+    private javax.swing.JMenuItem jmiProSearch;
+    private javax.swing.JMenuItem jmiProShow;
+    private javax.swing.JMenuItem jmiProUpdate;
+    private javax.swing.JMenu jmiReport;
+    private javax.swing.JMenuItem jmiSupDelete;
+    private javax.swing.JMenuItem jmiSupInsert;
+    private javax.swing.JMenuItem jmiSupSearch;
+    private javax.swing.JMenuItem jmiSupShow;
+    private javax.swing.JMenuItem jmiSupUpdate;
+    private javax.swing.JMenuItem jmiSystemPre;
+    private javax.swing.JLabel lblAccDetail;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JPanel pProfile;
+    private javax.swing.JTabbedPane tpMainBoard;
     // End of variables declaration//GEN-END:variables
 }
