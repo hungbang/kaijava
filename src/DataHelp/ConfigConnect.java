@@ -22,7 +22,7 @@ public class ConfigConnect {
         try{
             //neu la sql
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            this.host = "jdbc:sqlserver://BNGQUNHNG0A40\\BNGQUNHNG0A40:1433;databaseName=quanlybanhangbyjava";
+            this.host = "jdbc:sqlserver://10.211.55.4:1433;databaseName=quanlybanhangbyjava";
             this.user = "sa";
             this.pass = "1";
             if(cn == null){

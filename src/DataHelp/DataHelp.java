@@ -21,9 +21,7 @@ public class DataHelp {
     public Connection getCon(){
 	Connection cn = null;
 	try{
-	    if(!cn.isClosed()){
-		cn = cc.getCon();
-	    }
+            cn = cc.getCon();
 	}
 	catch(Exception ex){
 	    ex.getMessage();

@@ -8,6 +8,7 @@ package DataHelp;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,13 +19,16 @@ import java.util.List;
 public class OrderDetailController {
     DataHelp db = new DataHelp();
     //get all order detail 
-    public List<OrderDetails> getOrderDetailAll(){
+    public List<OrderDetails> getOrderDetailAll() throws SQLException{
 	List<OrderDetails> list = new ArrayList<>();
+        CallableStatement call = null;
+        ResultSet rs = null;
+        Connection cn = null;
 	try{
 	    String strSql = "{call sp_OrderDetail_GetByAll}";
-	    Connection cn = db.getCon();
-	    CallableStatement call = cn.prepareCall(strSql);
-	    ResultSet rs = call.executeQuery();
+	    cn = db.getCon();
+	    call = cn.prepareCall(strSql);
+	    rs = call.executeQuery();
 	    while(rs.next()){
 		OrderDetails od = new OrderDetails(rs.getInt("OrderID"), rs.getInt("ProductID"), rs.getDouble("UnitPrice"), rs.getInt("Quantiry"), rs.getFloat("Discount"));
 		list.add(od);
@@ -34,17 +38,26 @@ public class OrderDetailController {
 	catch(Exception ex){
 	    System.err.println(ex.getMessage());
 	}
+        finally{
+            cn.close();
+            call.close();
+            rs.close();
+        }
 	return list;
     }
     //get order detail by id
-    public List<OrderDetails> getOrderDetailByID(int id){
+    public List<OrderDetails> getOrderDetailByID(OrderDetails o) throws SQLException{
 	List<OrderDetails> list = new ArrayList<>();
+        CallableStatement call = null;
+        ResultSet rs = null;
+        Connection cn = null;
 	try{
-	    String strSql = "{call sp_OrderDetail_GetByID(?)}";
-	    Connection cn = db.getCon();
-	    CallableStatement call = cn.prepareCall(strSql);
-	    call.setInt("OrderID", id);
-	    ResultSet rs = call.executeQuery();
+	    String strSql = "{call sp_OrderDetail_GetByID(?,?)}";
+	    cn = db.getCon();
+	    call = cn.prepareCall(strSql);
+	    call.setInt("OrderID", o.getOrderID());
+            call.setInt("ProductID", o.getProductID());
+	    rs = call.executeQuery();
 	    while(rs.next()){
 		OrderDetails od = new OrderDetails(rs.getInt("OrderID"), rs.getInt("ProductID"), rs.getDouble("UnitPrice"), rs.getInt("Quantiry"), rs.getFloat("Discount"));
 		list.add(od);
@@ -53,15 +66,22 @@ public class OrderDetailController {
 	catch(Exception ex){
 	    System.err.println(ex.getMessage());
 	}
+        finally{
+            cn.close();
+            call.close();
+            rs.close();
+        }
 	return list;
     }
     //insert into order detail
-    public int insertOrderDetail(OrderDetails od){
+    public int insertOrderDetail(OrderDetails od) throws SQLException{
 	int row = 0;
+        CallableStatement call = null;
+        Connection cn = null;
 	try{
 	    String strSql = "{call sp_OrderDetail_Insert(?,?,?,?,?)}";
-	    Connection cn = db.getCon();
-	    CallableStatement call = cn.prepareCall(strSql);
+	    cn = db.getCon();
+	    call = cn.prepareCall(strSql);
 	    call.setInt("OrderID", od.getOrderID());
 	    call.setInt("ProductID", od.getProductID());
 	    call.setDouble("UnitPrice", od.getUnitPrice());
@@ -72,15 +92,21 @@ public class OrderDetailController {
 	catch(Exception ex){
 	    System.err.println(ex.getMessage());
 	}
+        finally{
+            cn.close();
+            call.close();
+        }
 	return row;
     }
     //update order detail
-    public int updateOrderDetail(OrderDetails od){
+    public int updateOrderDetail(OrderDetails od) throws SQLException{
 	int row = 0;
+        CallableStatement call = null;
+        Connection cn = null;
 	try{
 	    String strSql = "{call sp_OrderDetail_Update(?,?,?,?,?)}";
-	    Connection cn = db.getCon();
-	    CallableStatement call = cn.prepareCall(strSql);
+	    cn = db.getCon();
+	    call = cn.prepareCall(strSql);
 	    call.setInt("OrderID", od.getOrderID());
 	    call.setInt("ProductID", od.getProductID());
 	    call.setDouble("UnitPrice", od.getUnitPrice());
@@ -91,15 +117,21 @@ public class OrderDetailController {
 	catch(Exception ex){
 	    System.err.println(ex.getMessage());
 	}
+        finally{
+            cn.close();
+            call.close();
+        }
 	return row;
     }
     //delete order detail
-    public int deleteOrderDetail(OrderDetails od){
+    public int deleteOrderDetail(OrderDetails od) throws SQLException{
 	int row = 0;
+        CallableStatement call = null;
+        Connection cn = null;
 	try{
 	    String strSql = "{call sp_OrderDetail_Delete(?,?)}";
-	    Connection cn = db.getCon();
-	    CallableStatement call = cn.prepareCall(strSql);
+	    cn = db.getCon();
+	    call = cn.prepareCall(strSql);
 	    call.setInt("OrderID", od.getOrderID());
 	    call.setInt("ProductID", od.getProductID());
 	    row = call.executeUpdate();
@@ -107,6 +139,10 @@ public class OrderDetailController {
 	catch(Exception ex){
 	    System.err.println(ex.getMessage());
 	}
+        finally{
+            cn.close();
+            call.close();
+        }
 	return row;
     }
 }
