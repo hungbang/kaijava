@@ -7,6 +7,7 @@ package Business;
 
 import DataHelp.ProductController;
 import DataHelp.Products;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -15,19 +16,19 @@ import java.util.List;
  */
 public class ProductServices {
     ProductController pc = new ProductController();
-    public List<Products> getProduct(){
+    public List<Products> getProduct() throws SQLException{
 	return pc.getProduct();
     }
-    public List<Products> getProductByID(int id){
+    public List<Products> getProductByID(int id) throws SQLException{
 	return pc.getProductByID(id);
     }
-    public int insertProduct(Products p){
+    public int insertProduct(Products p) throws SQLException{
 	return pc.insertProduct(p);
     }
-    public int updateProduct(Products p){
+    public int updateProduct(Products p) throws SQLException{
 	return pc.updateProduct(p);
     }
-    public int deleteProduct(int id){
+    public int deleteProduct(int id) throws SQLException{
 	return pc.deleteProduct(id);
     }
 }

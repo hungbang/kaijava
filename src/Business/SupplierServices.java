@@ -8,7 +8,9 @@ package Business;
 
 import DataHelp.SupplierController;
 import DataHelp.Suppliers;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.Vector;
 
 /**
  *
@@ -16,19 +18,22 @@ import java.util.List;
  */
 public class SupplierServices {
     SupplierController sc = new SupplierController();
-    public List<Suppliers> getSupplier(){
+    public List<Suppliers> getSupplier() throws SQLException{
 	return sc.getSupplier();
     }
-    public List<Suppliers> getSupplierByID(int id){
+    public Vector<Suppliers> getSupplierByVector() throws SQLException{
+        return sc.getSupplierByVector();
+    }
+    public List<Suppliers> getSupplierByID(int id) throws SQLException{
 	return sc.getSupplierByID(id);
     }
-    public int insertSupllier(Suppliers s){
+    public int insertSupllier(Suppliers s) throws SQLException{
 	return sc.insertSupllier(s);
     }
-    public int updateSupllier(Suppliers s){
+    public int updateSupllier(Suppliers s) throws SQLException{
 	return sc.updateSupllier(s);
     }
-    public int deleteSupplier(int id){
+    public int deleteSupplier(int id) throws SQLException{
 	return sc.deleteSupplier(id);
     }
 }

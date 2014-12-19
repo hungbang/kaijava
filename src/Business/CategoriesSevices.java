@@ -7,7 +7,9 @@ package Business;
 
 import DataHelp.Categories;
 import DataHelp.CategoriesController;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.Vector;
 
 /**
  *
@@ -15,19 +17,22 @@ import java.util.List;
  */
 public class CategoriesSevices {
     CategoriesController cc = new CategoriesController();
-    public List<Categories> getCateAll(){
+    public Vector<Categories> getCateAllByVector() throws SQLException{
+        return cc.getCateAllByVector();
+    }
+    public List<Categories> getCateAll() throws SQLException{
 	return cc.getCateAll();
     }
-    public List<Categories> getCateByID(int id){
+    public List<Categories> getCateByID(int id) throws SQLException{
 	return cc.getCateByID(id);
     }
-    public int insertCate(Categories c){
+    public int insertCate(Categories c) throws SQLException{
 	return cc.insertCate(c);
     }
-    public int updateCate(Categories c){
+    public int updateCate(Categories c) throws SQLException{
 	return cc.updateCate(c);
     }
-    public int deleteCate(Categories c){
+    public int deleteCate(Categories c) throws SQLException{
 	return cc.deleteCate(c);
     }
 }

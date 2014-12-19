@@ -8,7 +8,6 @@ package Test;
 import Business.CategoriesSevices;
 import Business.CustomerServices;
 import DataHelp.Categories;
-import DataHelp.ConfigConnect;
 import DataHelp.Customers;
 import DataHelp.DataHelp;
 import java.sql.Connection;

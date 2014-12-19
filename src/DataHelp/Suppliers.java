@@ -195,5 +195,8 @@ public class Suppliers {
     public Suppliers() {
     }
     
-    
+    @Override
+    public String toString(){
+        return this.companyName;
+    }
 }

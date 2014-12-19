@@ -19,16 +19,16 @@ public class CustomerServices {
     public List<Customers> getCusByAll() throws SQLException{
 	return cc.getCusByAll();
     }
-    public List<Customers> getOrderByID(int id){
+    public List<Customers> getOrderByID(int id) throws SQLException{
 	return cc.getOrderByID(id);
     }
-    public int insertCustomer(Customers p){
+    public int insertCustomer(Customers p) throws SQLException{
 	return cc.insertCustomer(p);
     }
-    public int updateOrder(Customers p){
+    public int updateOrder(Customers p) throws SQLException{
 	return cc.updateOrder(p);
     }
-    public int deleteOrder(Customers p){
+    public int deleteOrder(Customers p) throws SQLException{
 	return cc.deleteOrder(p);
     }
 }
